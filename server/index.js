@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const { auth } = require('./middleware/auth');
@@ -28,6 +28,9 @@ app.get('/',(req,res) => res.send('Hello World! 하이'))
 app.listen(port,() => console.log(`Example app listening on port ${port}!`))
 
 
+app.get('/api/hello',(req,res) => {
+    res.send("hello axios");
+})
 
 
 app.post('/api/users/register',(req, res) => {
